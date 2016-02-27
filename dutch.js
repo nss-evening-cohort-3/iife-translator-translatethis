@@ -25,6 +25,4 @@ var words = {"happy":"gelukkig", "fourth of july":"nationale feestdag", "go":"lo
 
 
 
-console.log(Translator.doDutchTranslation(dutchWords));
-
 
