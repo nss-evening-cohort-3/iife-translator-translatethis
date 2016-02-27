@@ -38,10 +38,10 @@ var words = {"happy":"gelukkig", "fourth of july":"nationale feestdag", "go":"lo
 // The next part will need a .map that returns a value (foreign word) that matches a key (English word)
 
 // These are just testing to see if the above methods are working
-console.log(Translator.getDutchWords());
-console.log(Translator.justDutch('happy'));
-console.log(Translator.makeDutchArray("shit"));
+// console.log(Translator.getDutchWords());
+// console.log(Translator.justDutch('happy'));
+// console.log(Translator.makeDutchArray("shit"));
 
 // This is the function call that is not playing nicely right now.
-Translator.sayHi();
+// Translator.sayHi();
 
