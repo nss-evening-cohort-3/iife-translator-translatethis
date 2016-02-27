@@ -1,4 +1,4 @@
-var Translator = (function () {
+var Translator = (function (originalTranslator) {
 var lexicon = {
 "happy": "felice", 
 "fourth" : "quarto", 
@@ -35,7 +35,7 @@ var lexicon = {
 
 
 
-}();)
+}(Translator));
 
 
 
