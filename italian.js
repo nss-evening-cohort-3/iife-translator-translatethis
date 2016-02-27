@@ -37,7 +37,7 @@ var lexicon = {
 lexicon[userInput] 
 
 
-  var translateToItalian = function(){
+  var translateToItalian = function(inputArray){
 var langMap = words.map(word)
 return indexOf(word).value 
   console.log("map", langMap);
