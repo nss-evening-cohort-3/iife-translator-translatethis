@@ -1,25 +1,61 @@
+var RussianWords = ["happy", "shit", "day", "dead", "hair", "ferret"];
 var Translator = (function(originalTranslator){
-  var RussianWords = {"дуть дерьмо": "blow shit up", "счастливый": "happy", "четвертое июля": "fourth of July", "Выходи": "go out", "а также": "and", "день рождения": "birthday", "Привет": "greetings", "времена года": "seasons", "мамин": "mother's", "отца": "father's", "день": "day", "сидеть": "sit", "ваш": "your",
-"жопа": "ass" , "вниз": "down", "где": "where", "является": "is", "the": "the", "ром": "rum" , "Trump's": "Trump's", "волосы": "hair", "внешность": "looks", "как": "like" , "a": "a" , "мертвый": "dead", "хорек": "ferret"}
+var words = {
+  "blow": "дуть", 
+  "shit": "дерьм",
+"up": "вверх",
+"happy": "счастливый", 
+"fourth": "четвертый",
+"of": "из",
+"July": "июль", 
+"go": "идти",
+"out": "вне", 
+"and": "а также",
+"birthday": "день рождения",
+"greetings": "Привет",
+"seasons": "времена года", 
+"mother's": "мамин", 
+"father's": "отца", 
+"day": "день", 
+"sit": "сидеть", 
+ "your": "ваш",
+"ass": "жопа" , 
+ "down": "вниз", 
+"where": "где", 
+"is": "является", 
+"the": "the", 
+"rum": "ром" , 
+"Trump's": "Trump's", 
+"hair": "волосы", 
+"looks": "внешность", 
+"like": "как" , 
+"a": "a" , 
+ "dead": "мертвый", 
+"ferret": "хорек"}
   
-  
-  //add methods to original SolarSystem using object dot notation
-  originalTranslator.addRussianWords = function(words) {
-    RussianWords.push(words)
-    return RussianWords;
-  };
-  //originalSolarSystem.addDwarfPlanet = function(tinyPlanet){
-   // dwarfPlanets.push(tinyPlanet);
-    //return dwarfPlanets;
-  //};
+var translatedWords = [];
 
-  originalTranslator.getRussianWords = function() {
-    return RussianWords;
-  }
+  // A function to push the translated words into the translatedWords array
+  // THIS ONE WILL DEFINITELY BE PART OF OUR FINAL CODE
+  originalTranslator.makeRussianArray = function(items) {
+    items.forEach(function(item) {
+    translatedWords.push(words[item]);
+    
+  });
 
-  //return the old SolarSystem to the world with its new methods attached
+return translatedWords;
+}
+// This is what hooks up the original iife to the augmenters
   return originalTranslator;
-  }(Translator || {} ));  //<-----------pass in original SolarSystem object
 
-  console.log(Translator.addRussianWords(""));
+}(Translator || {}));
+
+
+
+
+
+
+
+
+  
   
