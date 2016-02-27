@@ -1,4 +1,5 @@
 var Translator = (function (originalTranslator) {
+var translatedWords = []
 var lexicon = {
 "happy": "felice", 
 "fourth" : "quarto", 
@@ -32,6 +33,15 @@ var lexicon = {
 "dead" : "morti", 
 "ferret" : "furetto" 
 }
+  
+lexicon[userInput] 
+
+
+  var translateToItalian = function(){
+var langMap = words.map(word)
+return indexOf(word).value 
+  console.log("map", langMap);
+  };
 
 
 
