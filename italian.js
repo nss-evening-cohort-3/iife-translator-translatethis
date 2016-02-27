@@ -1,5 +1,8 @@
+var italianWords = ["happy", "shit", "day", "dead", "hair", "ferret"];
 var Translator = (function (originalTranslator) {
-var translatedWords = []
+var italianArray = [];
+
+
 var lexicon = {
 "happy": "felice", 
 "fourth" : "quarto", 
@@ -32,20 +35,19 @@ var lexicon = {
 "a" : "un", 
 "dead" : "morti", 
 "ferret" : "furetto" 
-}
+};
   
-lexicon[userInput] 
 
+  originalTranslator.italianTranslation = function(items) {
+    items.forEach(function(item) {
+      italianArray.push(lexicon[item]);
+    });
+    return italianArray;
+  }
+    return originalTranslator;
 
-  var translateToItalian = function(inputArray){
-var langMap = words.map(word)
-return indexOf(word).value 
-  console.log("map", langMap);
-  };
+}(Translator || {}));
 
-
-
-}(Translator));
-
+console.log(Translator.italianTranslation(italianWords));
 
 
