@@ -4,6 +4,12 @@ var Translator = (function() {
   return {};
 }());
 
+// Sequence needs to be:
+// User chooses language - languageChoice gets captured
+// User adds words - words get captured
+// user clicks on translate - 
+
+
 
 // All the things that we need to grab from the DOM in index.html
 
@@ -13,45 +19,44 @@ var textInput = document.getElementById("words");
 var languageChoice;
 
 
-select.addEventListener('change', function(){
-  var languageChoice = select.selectedIndex;
-  return languageChoice;
-  });
-
-
-// This function takes the user's input and splits it into an array
-
-var makeArray = function(inputString) {
-  var inputArray = inputString.split(" ");
-};
+// This is the TRANSLATE button being clicked.
+// It calls 'makeArray', which makes the user input into an array
+// 'languageChoice' gets passed in because 'makeArray' will pass it on
+// to the 'translateByLanguage' function (which needs the language input)
 
 button.addEventListener("click", function(){
-  getInput();
-  console.log(languageChoice);
+  var inputString = textInput.value;
+  makeArray(inputString, languageChoice);
 });
 
-var getInput = function() {
-  var inputString = textInput.value;
-  makeArray(inputString);
+
+// This function takes the user's input and splits it into an array.
+// It will call the 'translateByLanguage' function, so it needs to have
+// 'languageSelection' as an argument
+
+var makeArray = function(inputString, languageSelection) {
+  var inputArray = inputString.split(" ");
+  var languageChoice = select.selectedIndex;
+  translateByLanguage(languageChoice, inputArray);
 };
 
-// This function is called by the language selector event listener.
-// It calls a different function depending on what language is chosen.
-var select = document.getElementById("languages");
 
-
+// This calls the translation functions from our different augmenters
+// by determining what language was chosen by the user.
 
 var translateByLanguage = function(languageSelection, inputArray) {
 
   if (languageSelection === 1) {
     // This will be a call to the Haitian-Creole iife
-    console.log("Haitian", inputArray);
+
   }
   else if (languageSelection === 2) {
     // This will be a call to the Russian iife
+
   }
   else if (languageSelection === 3) {
     // This will be a call to the Italian iife
+
   }
   else if (languageSelection === 4) {
     // This will be a call to the Dutch iife
@@ -62,11 +67,12 @@ var translateByLanguage = function(languageSelection, inputArray) {
   }
 };
 
+// Add the string to the DOM
 
-// Grabbing the id where the text has been input, to get their value
-
-
-
+var showTranslation = function(translatedString) {
+  var textOutput = document.getElementById("transText");
+    textOutput.innerHTML += translatedString;
+};
 
 
 
