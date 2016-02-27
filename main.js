@@ -8,4 +8,7 @@ button.addEventListener("click", function(){
   var inputString = textInput.value;
   // return inputString
 console.log("input",inputString);
-})
+});
+
+
+
