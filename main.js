@@ -4,8 +4,13 @@ var Translator = (function() {
 
 var textInput = document.getElementById("Words");
 var button = document.getElementById("btn");
-button.addEventListener("click", function(){
+button.addEventListener("click", function pullValue(){
   var inputString = textInput.value;
-  // return inputString
-console.log("input",inputString);
-})
+makeArray(inputString);
+});
+
+var makeArray = function (inputString) {
+var inputArray = inputString.split(" ");
+
+return inputArray;
+};
