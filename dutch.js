@@ -24,6 +24,3 @@ var words = {"happy":"gelukkig", "fourth of july":"nationale feestdag", "go":"lo
 }(Translator || {}));
 
 
-
-
-
