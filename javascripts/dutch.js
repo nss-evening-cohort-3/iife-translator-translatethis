@@ -19,7 +19,7 @@ var Translator = (function(originalTranslator) {
         // to an empty array called 'translatedWords'
         translatedWords.push(words[item]);
         // The array gets converted back into a string
-        dutchString = translatedWords.join(" ");
+        dutchString = translatedWords.join(" ").toUpperCase() + "!";
         // CALLS the 'showTranslation' function and gives it 'dutchString'
         originalTranslator.showTranslation(dutchString);
        });

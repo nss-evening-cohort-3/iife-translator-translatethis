@@ -27,7 +27,7 @@ var languageChoice;
 
 button.addEventListener("click", function(){
   // get the user's input and save it in a variable called 'inputString'
-  var inputString = textInput.value;
+  var inputString = textInput.value.toLowerCase();
   // calls the 'makeArray' function (see below)
   makeArray(inputString, languageChoice);
 });
