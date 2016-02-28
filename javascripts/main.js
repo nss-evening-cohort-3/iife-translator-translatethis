@@ -1,8 +1,14 @@
 // This is the main iife that gets augmented by our individual js files
 
 var Translator = (function() {
-  return {};
-}());
+  var randomness = ["this", "that"];
+
+  return {
+    getrandomness: function(){
+      return randomness;
+    }
+  };
+})();
 
 
 
@@ -20,7 +26,9 @@ var languageChoice;
 // to the 'translateByLanguage' function (which needs the language input)
 
 button.addEventListener("click", function(){
-  var inputString = textInput.value;
+  // get the user's input and save it in a variable called 'inputString'
+  var inputString = textInput.value.toLowerCase();
+  // calls the 'makeArray' function (see below)
   makeArray(inputString, languageChoice);
 });
 
@@ -30,8 +38,12 @@ button.addEventListener("click", function(){
 // 'languageSelection' as an argument
 
 var makeArray = function(inputString, languageSelection) {
+  // Take the input string (user's input from above) and break it into an array
+  // Save the array in a variable called 'inputArray'
   var inputArray = inputString.split(" ");
+  // Get the user's choice of language by grabbing the value of the select field
   var languageChoice = select.selectedIndex;
+  // CALL the 'translateByLanguage' function
   translateByLanguage(languageChoice, inputArray);
 };
 
@@ -39,35 +51,23 @@ var makeArray = function(inputString, languageSelection) {
 // This calls the translation functions from our different augmenters
 // by determining what language was chosen by the user.
 
-var translateByLanguage = function(languageSelection, inputArray) {
+var translateByLanguage = function(languageSelection, thisArray) {
 
   if (languageSelection === 1) {
-    // This will be a call to the Haitian-Creole iife
-
+    Translator.translateToHaitian(thisArray);
   }
   else if (languageSelection === 2) {
-    // This will be a call to the Russian iife
-
+    Translator.translateToRussian(thisArray);
   }
   else if (languageSelection === 3) {
-    // This will be a call to the Italian iife
-
+    Translator.translateToItalian(thisArray);
   }
   else if (languageSelection === 4) {
-    // This will be a call to the Dutch iife
-
+    Translator.translateToDutch(thisArray);
   }
   else {
     alert("I'm sorry.  That's not a valid choice.");
   }
 };
-
-// Add the newly translated string to the DOM
-
-var showTranslation = function(translatedString) {
-  var textOutput = document.getElementById("transText");
-    textOutput.innerHTML += translatedString;
-};
-
 
 
