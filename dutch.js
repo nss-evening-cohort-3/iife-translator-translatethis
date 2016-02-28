@@ -13,15 +13,16 @@ var words = {"happy":"gelukkig", "fourth of july":"nationale feestdag", "go":"lo
       translatedWords.push(words[item]);
       dutchString = translatedWords.join(" ");
      });
-    return dutchString;
-  }
 
+    showTranslation(dutchString)
+  }
 
 
 // This is what hooks up the original iife to the augmenters
   return originalTranslator;
 
 }(Translator || {}));
+
 
 
 
