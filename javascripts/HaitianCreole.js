@@ -1,6 +1,6 @@
 // Create function to augment original translater
 // create object whose properties are the words
-var haitianWords = ["happy", "shit", "day", "dead", "hair", "ferret"];
+// var haitianWords = ["happy", "shit", "day", "dead", "hair", "ferret"];
 var Translator = (function (originalTranslator) {
 
 	var translatedWords = [];
@@ -39,46 +39,58 @@ var Translator = (function (originalTranslator) {
 	"ferret":"découvrir"
 
 };
-	// originalTranslator.getHaitianCreole = function() {
-	// 	return haitianCreole
-	// };
 	
+// ******Main Translation Function********* //
+  
 
-
-// A function to test whether we can access our foreign language words
-  // Probably not going to be part of the final code -- though it could be,
-  // if we wanted to give the user a list of possible words to use...
-  // originalTranslator.getHaitianWords = function() {
-  //   return words;
-  // }
-
-  // A function to test whether we are capturing the value of the key
-  // (to show whether we're actually translating the word)
-  // originalTranslator.justDutch = function(example) {
-  //   return words[example];
-  // }
-
-  // A function to push the translated words into the translatedWords array
-  // THIS ONE WILL DEFINITELY BE PART OF OUR FINAL CODE
-  originalTranslator.makeHaitianArray = function(items) {
-    items.forEach(function(item){
+// This gets called in the translateByLanguage function in main.js
+// It takes an argument (which is the array-version of the user's input)
+  originalTranslator.translateToHaitian = function(items) {
+    // We start with an empty string (we'll fill it up with our foreign words)
+    var haitianString = "";
+    // This forEach loops through the input array
+    items.forEach(function(item) {
+    // each word (called 'items' here) gets translated and added
+    // to an empty array called 'translatedWords'
     	translatedWords.push(words[item]);
+    // The array gets converted back into a string
+    haitianString = translatedWords.join(" ").toUpperCase() + "!";
+    // CALLS the 'showTranslation' function and gives it 'haitianString'
+    originalTranslator.showTranslation(haitianString);
+
 	});
-    return translatedWords;
+    // return translatedWords;
   }
+
+// ******** Adds the translated string to the DOM ******** //
+
+
+  //Takes and argument ('haitianString') when it's called above
+  originalTranslator.showTranslation = function(translatedHaitianString) {
+  //Gets the id of the div where we want to put the new text and stores it
+  //in a variable called 'textOutput'
+  var textOutput = document.getElementById("transText");
+  console.log("textOutput", textOutput );
+
+  // Says 'Change the HTML content of this div to whatever is in the translatedString'
+    textOutput.innerHTML = translatedHaitianString;
+    // CALLS the 'makepretty' function (see below), passing in the div variable 
+    originalTranslator.makePretty(textOutput);
+  }
+
+
+
+// ****** Sets the class on the text div so we can vary it by language *** //
+
+originalTranslator.makepretty = function(element) {
+  // Takes the element variable (passed in above) amd adds a class to it
+  element.setAttribute("class", "dutchText");
+}
+
 
 // This is what hooks up the original iife to the augmenters
   return originalTranslator;
 
 }(Translator || {}));
 
-// console.log(Translator.makeHaitianArray(haitianWords));
-// The next part will need a .map that returns a value (foreign word) that matches a key (English word)
 
-// These are just testing to see if the above methods are working
-// console.log(Translator.getDutchWords());
-// console.log(Translator.justDutch('happy'));
-// console.log(Translator.makeDutchArray("shit"));
-
-// This is the function call that is not playing nicely right now.
-// Translator.sayHi();

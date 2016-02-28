@@ -1,8 +1,8 @@
 var RussianWords = ["happy", "shit", "day", "dead", "hair", "ferret"];
 var Translator = (function(originalTranslator){
 var words = {
-  "blow": "дуть", 
-  "shit": "дерьм",
+"blow": "дуть", 
+"shit": "дерьм",
 "up": "вверх",
 "happy": "счастливый", 
 "fourth": "четвертый",
@@ -37,7 +37,7 @@ var translatedWords = [];
 
   // A function to push the translated words into the translatedWords array
   // THIS ONE WILL DEFINITELY BE PART OF OUR FINAL CODE
-  originalTranslator.makeRussianArray = function(items) {
+  originalTranslator.translateToRussian = function(items) {
     items.forEach(function(item) {
     translatedWords.push(words[item]);
     
