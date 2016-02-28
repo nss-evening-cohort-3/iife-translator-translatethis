@@ -1,4 +1,3 @@
-var italianWords = ["happy", "shit", "day", "dead", "hair", "ferret"];
 var Translator = (function (originalTranslator) {
 var italianArray = [];
 
@@ -48,6 +47,5 @@ var lexicon = {
 
 }(Translator || {}));
 
-console.log(Translator.italianTranslation(italianWords));
 
 
