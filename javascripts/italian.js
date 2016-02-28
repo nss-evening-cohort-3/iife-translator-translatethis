@@ -41,7 +41,8 @@ var lexicon = {
     items.forEach(function(item) {
       italianArray.push(lexicon[item]);
     });
-    return italianArray;
+    //return italianArray;
+    console.log(italianArray);
   }
     return originalTranslator;
 
