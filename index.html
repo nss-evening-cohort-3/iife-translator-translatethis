@@ -4,8 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<h2>Translate This</h2>
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+
+	<textarea id="words" class="Words" rows="10" cols="50" placeholder="Ooo Whatcha Say?"></textarea>
+	<br>
+	<br>
 	<select id="languages" class="languages">Languages
 		<option value="Select Language">Select Language</option>
 		<option value="Haitian Creole">Haitian Creole</option>
@@ -13,15 +18,11 @@
 		<option value="Italian">Italian</option>
 		<option value="Dutch">Dutch</option>
 	</select>
-	<br>
-	<br>
-	<textarea id="Words" class="Words" rows="10" cols="50" placeholder="Ooo Whatcha Say?"></textarea>
 	<button id="btn">Translate</button>
+  <br>
+  <br>
+	<div id="transText"></div>
 
-	<div class="transText">
-	
-	</div>
-	
 	<script type="text/javascript" src="dutch.js"></script>
 	<script type="text/javascript" src="HaitianCreole.js"></script>
 	<script type="text/javascript" src="italian.js"></script>
