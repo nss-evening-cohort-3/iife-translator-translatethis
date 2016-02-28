@@ -4,11 +4,6 @@ var Translator = (function() {
   return {};
 }());
 
-// Sequence needs to be:
-// User chooses language - languageChoice gets captured
-// User adds words - words get captured
-// user clicks on translate - 
-
 
 
 // All the things that we need to grab from the DOM in index.html
@@ -67,7 +62,7 @@ var translateByLanguage = function(languageSelection, inputArray) {
   }
 };
 
-// Add the string to the DOM
+// Add the newly translated string to the DOM
 
 var showTranslation = function(translatedString) {
   var textOutput = document.getElementById("transText");
