@@ -39,9 +39,9 @@ var Translator = (function (originalTranslator) {
 	"ferret":"découvrir"
 
 };
-	
+
 // ******Main Translation Function********* //
-  
+
 
 // This gets called in the translateByLanguage function in main.js
 // It takes an argument (which is the array-version of the user's input)
@@ -70,7 +70,6 @@ var Translator = (function (originalTranslator) {
   //Gets the id of the div where we want to put the new text and stores it
   //in a variable called 'textOutput'
   var textOutput = document.getElementById("transText");
-  console.log("textOutput", textOutput );
 
   // Says 'Change the HTML content of this div to whatever is in the translatedString'
     textOutput.innerHTML = translatedHaitianString;
@@ -82,15 +81,15 @@ var Translator = (function (originalTranslator) {
 
 // ****** Sets the class on the text div so we can vary it by language *** //
 
-originalTranslator.makepretty = function(element) {
-  // Takes the element variable (passed in above) amd adds a class to it
-  element.setAttribute("class", "dutchText");
+originalTranslator.makePretty = function(element) {
+  // Takes the element variable (passed in above) and adds a class to it
+  element.setAttribute("class", "haitianText");
 }
 
 
 // This is what hooks up the original iife to the augmenters
   return originalTranslator;
 
-}(Translator || {}));
+})(Translator || {});
 
 
