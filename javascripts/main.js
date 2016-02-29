@@ -1,13 +1,9 @@
 // This is the main iife that gets augmented by our individual js files
 
 var Translator = (function() {
-  var randomness = ["this", "that"];
 
-  return {
-    getrandomness: function(){
-      return randomness;
-    }
-  };
+  return {};
+
 })();
 
 
