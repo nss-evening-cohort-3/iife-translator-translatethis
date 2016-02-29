@@ -1,6 +1,4 @@
-// Create function to augment original translater
-// create object whose properties are the words
-// var haitianWords = ["happy", "shit", "day", "dead", "hair", "ferret"];
+
 var Translator = (function (originalTranslator) {
 
 	var translatedWords = [];
@@ -8,37 +6,35 @@ var Translator = (function (originalTranslator) {
 	var words = {
 	"happy": "bon",
 	"fourth": "Katriyem",
-	"of": "pour", 
+	"of": "pour",
 	"july":"Jiye",
 	"go":"ale",
-	"out":"deyo", 
-	"and":"ak", 
+	"out":"deyo",
+	"and":"ak",
 	"blow":"soufle",
 	"shit":"kaka",
 	"up":"moute",
-	"birthday":"fet", 
-	"greetings":"bonjour", 
+	"birthday":"fet",
+	"greetings":"bonjour",
 	"seasons":"sezon",
 	"mother's":"manman an",
 	"day": "jou",
-	"father's":"papa an", 
+	"father's":"papa an",
 	"sit": "poze",
 	"your": "ou",
 	"ass": "boudou",
-	"down":"la", 
+	"down":"la",
 	"where": "kote",
 	"is": "se",
 	"the": "la",
-	"rum":"wonm nan", 
+	"rum":"wonm nan",
 	"Trump's": "Trump",
 	"hair": "cheve",
 	"looks": "regarde",
 	"like": "konou",
 	"a": "yon",
 	"dead": "mouri",
-	"ferret":"découvrir"
-
-};
+	"ferret":"découvrir" };
 
 // ******Main Translation Function********* //
 
@@ -47,34 +43,16 @@ var Translator = (function (originalTranslator) {
 // It takes an argument (which is the array-version of the user's input)
   originalTranslator.translateToHaitian = function(items) {
     // We start with an empty string (we'll fill it up with our foreign words)
-    var haitianString = "";
+
     // This forEach loops through the input array
     items.forEach(function(item) {
     // each word (called 'items' here) gets translated and added
     // to an empty array called 'translatedWords'
     	translatedWords.push(words[item]);
-    // The array gets converted back into a string
-    haitianString = translatedWords.join(" ").toUpperCase() + "!";
-    // CALLS the 'showTranslation' function and gives it 'haitianString'
-    originalTranslator.showTranslation(haitianString);
-
 	});
-    // return translatedWords;
+    // Sends the string of translated words back to the main.js
+    return translatedWords;
   }
-
-// ******** Adds the translated string to the DOM ******** //
-
-
-  //Takes and argument ('haitianString') when it's called above
-  originalTranslator.showTranslation = function(translatedHaitianString) {
-  //Gets the id of the div where we want to put the new text and stores it
-  //in a variable called 'textOutput'
-  var textOutput = document.getElementById("transText");
-
-  // Says 'Change the HTML content of this div to whatever is in the translatedString'
-    textOutput.innerHTML = translatedHaitianString;
-  }
-
 
 
 // This is what hooks up the original iife to the augmenters
