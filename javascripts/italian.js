@@ -65,15 +65,9 @@ var lexicon = {
   var textOutput = document.getElementById("transText");
   //Says 'change the HTML of this div to whatever it is in translatedString'
    textOutput.innerHTML = translatedString;
-  //CALLS the 'makePretty' function (see below), passing in the div variable
-    originalTranslator.makePretty(textOutput);
+
   }
 
-//**** Sets the class on the text div so we can vary it by language ***** //
-  originalTranslator.makePretty = function(element) {
-    //Takes the element variable (passed in above) and adds a class to it
-    element.setAttribute('class', 'italianText');
-  }
 
   //This hooks up the original IIFE to the augmenters
     return originalTranslator;

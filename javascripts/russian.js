@@ -67,18 +67,9 @@ var Translator = (function(originalTranslator){
 
   // Says 'Change the HTML content of this div to whatever is in the translatedString'
     textOutput.innerHTML = translatedRussianString;
-    // CALLS the 'makepretty' function (see below), passing in the div variable 
-    originalTranslator.makePretty(textOutput);
+
   }
 
-
-
-// ****** Sets the class on the text div so we can vary it by language *** //
-
-    originalTranslator.makePretty = function(element) {
-      // Takes the element variable (passed in above) and adds a class to it
-      element.setAttribute('class', 'russianText');
-    }
 
 
 // This is what hooks up the original iife to the augmenters

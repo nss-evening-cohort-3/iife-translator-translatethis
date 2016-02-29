@@ -55,19 +55,27 @@ var translateByLanguage = function(languageSelection, thisArray) {
 
   if (languageSelection === 1) {
     Translator.translateToHaitian(thisArray);
+    makePretty("haitianText");
   }
   else if (languageSelection === 2) {
     Translator.translateToRussian(thisArray);
+    makePretty("russianText");
   }
   else if (languageSelection === 3) {
     Translator.translateToItalian(thisArray);
+    makePretty("italianText");
   }
   else if (languageSelection === 4) {
     Translator.translateToDutch(thisArray);
+    makePretty("dutchText");
   }
   else {
     alert("I'm sorry.  That's not a valid choice.");
   }
 };
 
-
+// CALLS the 'makePretty' function (see below), passing in the div variable
+var makePretty = function(newClass) {
+    var textOutput = document.getElementById("transText");
+    textOutput.setAttribute('class', newClass);
+};
