@@ -8,6 +8,7 @@ var Translator = (function(originalTranslator) {
 
    // ******** Main translation function ******** //
 
+  
    // This gets called in the translateByLanguage function in main.js
    // It takes an argument (which is the array-version of the user's input)
     originalTranslator.translateToDutch = function(items) {
@@ -25,8 +26,12 @@ var Translator = (function(originalTranslator) {
        });
     }
 
+
+
+
   // ******** Adds the translated string to the DOM ******** //
 
+   
     // Takes an argument ('dutchString') when it's called above
     originalTranslator.showTranslation = function(translatedString) {
     // Gets the id of the div where we want to put the new text and stores it
