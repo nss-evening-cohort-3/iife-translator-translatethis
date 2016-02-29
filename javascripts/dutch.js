@@ -37,15 +37,14 @@ var Translator = (function(originalTranslator) {
     // Says 'change the HTML content of this div to whatever is in translatedString'
       textOutput.innerHTML = translatedString;
       // CALLS the 'makepretty' function (see below), passing in the div variable
-      document.getElementById("transText").className = "dutchText";
-      //originalTranslator.makePretty(textOutput);
+      originalTranslator.makePretty(textOutput);
     }
 
   // **** Sets the class on the text div so we can vary it by language **** //
 
     originalTranslator.makePretty = function(element) {
       // Takes the element variable (passed in above) and adds a class to it
-      document.getElementById("transText").className = "dutchText";
+        element.setAttribute('class', 'dutchText');
     }
 
 

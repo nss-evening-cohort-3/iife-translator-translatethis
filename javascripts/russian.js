@@ -77,7 +77,7 @@ var Translator = (function(originalTranslator){
 
     originalTranslator.makePretty = function(element) {
       // Takes the element variable (passed in above) and adds a class to it
-      element.setAttribute("class", "russianText");
+      element.setAttribute('class', 'russianText');
     }
 
 
