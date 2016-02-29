@@ -17,6 +17,7 @@ var Translator = (function() {
 var button = document.getElementById("btn");
 var select = document.getElementById("languages");
 var textInput = document.getElementById("words");
+var transString = "";
 var languageChoice;
 
 
@@ -54,28 +55,46 @@ var makeArray = function(inputString, languageSelection) {
 var translateByLanguage = function(languageSelection, thisArray) {
 
   if (languageSelection === 1) {
-    Translator.translateToHaitian(thisArray);
-    makePretty("haitianText");
+  var translatedArray = Translator.translateToHaitian(thisArray);
+    makeString(translatedArray, "haitianText");
   }
   else if (languageSelection === 2) {
-    Translator.translateToRussian(thisArray);
-    makePretty("russianText");
+    var translatedArray = Translator.translateToRussian(thisArray);
+      makeString(translatedArray, "russianText");
   }
   else if (languageSelection === 3) {
-    Translator.translateToItalian(thisArray);
-    makePretty("italianText");
+    var translatedArray = Translator.translateToItalian(thisArray);
+      makeString(translatedArray, "italianText");
   }
   else if (languageSelection === 4) {
-    Translator.translateToDutch(thisArray);
-    makePretty("dutchText");
+    var translatedArray = Translator.translateToDutch(thisArray);
+      makeString(translatedArray, "dutchText");
   }
   else {
     alert("I'm sorry.  That's not a valid choice.");
   }
 };
 
-// CALLS the 'makePretty' function (see below), passing in the div variable
-var makePretty = function(newClass) {
+
+
+var makeString = function(translatedArray, newClass) {
+    transString = translatedArray.join(" ").toUpperCase() + "!";
+    showTranslation(transString, newClass);
+}
+
+
+var showTranslation = function(translatedString, newClass) {
+  // Gets the id of the div where we want to put the new text and stores it
+  // in a variable called 'textOutput'
     var textOutput = document.getElementById("transText");
-    textOutput.setAttribute('class', newClass);
+    // Says 'change the HTML content of this div to whatever is in translatedString'
+      textOutput.innerHTML = translatedString;
+// CALLS the 'makePretty' function (see below), passing in the div variable
+      makePretty(textOutput, newClass);
+};
+
+
+var makePretty = function(element, newClass) {
+  // Changes the class on the text element in the DOM to make it fancy by language.
+    element.setAttribute('class', newClass);
 };
