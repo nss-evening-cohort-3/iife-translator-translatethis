@@ -1,4 +1,3 @@
-var italianWords = ["happy", "shit", "day", "dead", "hair", "ferret"];
 var Translator = (function (originalTranslator) {
 var italianArray = [];
 
@@ -38,16 +37,16 @@ var lexicon = {
 };
   
 
-  originalTranslator.italianTranslation = function(items) {
+  originalTranslator.translateToItalian = function(items) {
     items.forEach(function(item) {
       italianArray.push(lexicon[item]);
     });
-    return italianArray;
+    //return italianArray;
+    console.log(italianArray);
   }
     return originalTranslator;
 
 }(Translator || {}));
 
-console.log(Translator.italianTranslation(italianWords));
 
 

@@ -1,4 +1,32 @@
-.transText {
+.haitianText {
   padding: 20px;
   border: 2px solid blue;
+  text-align: center;
+  background-color: yellow;
+  color: green;
+}
+
+.italianText {
+  padding: 20px;
+  border: 2px solid green;
+  text-align: center;
+  background-color: white;
+  color: red;
+}
+
+.russianText {
+  padding: 20px;
+  border: 2px solid blue;
+  text-align: center;
+  background-color: red;
+  color: black;
+}
+
+.dutchText {
+  padding: 20px;
+  border: 2px solid red;
+  text-align: center;
+  background-color: blue;
+  color: white;
+
 }
